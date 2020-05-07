@@ -5,12 +5,12 @@ import Helmet from 'react-helmet';
 import 'assets/stylesheets/application.scss';
 
 import Header from 'components/Header';
-import Footer from 'components/Footer';
+import Section from 'components/Section';
 
 const Layout = ({ children, pageName }) => {
   let className = '';
 
-  if ( pageName ) {
+  if (pageName) {
     className = `${className} page-${pageName}`;
   }
 
@@ -21,8 +21,10 @@ const Layout = ({ children, pageName }) => {
       </Helmet>
       <div className="wrapper">
         <Header />
-        <main>{ children }</main>
-        <Footer />
+        <div className="main-screen">
+          <Section />
+          <main className="main">{children}</main>
+        </div>
       </div>
     </>
   );
